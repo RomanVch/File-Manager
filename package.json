@@ -1,0 +1,21 @@
+{
+  "name": "file-manager",
+  "version": "1.0.0",
+  "description": "File-meneger CLI",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "start:n": "node src/index.js --username=RomanV"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomanVch/File-Manager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RomanVch/File-Manager/issues"
+  },
+  "homepage": "https://github.com/RomanVch/File-Manager#readme"
+}
