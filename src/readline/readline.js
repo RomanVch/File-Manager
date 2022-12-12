@@ -41,10 +41,8 @@ export const ReadLine = () => {
             whereCurrently(paths.pathNow);
         } else if (inputTrim.startsWith("compress ")) {
             compress(inputTrim)
-            whereCurrently(paths.pathNow);
         } else if (inputTrim.startsWith("decompress ")) {
             decompress(inputTrim)
-           whereCurrently(paths.pathNow);
         } else if(inputTrim === ".exit"){
             console.log(`Thank you for using File Manager, ${userName}, goodbye!`)
             process.exit()

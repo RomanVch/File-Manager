@@ -1,14 +1,19 @@
 import {cp} from "./cp.js";
-import {rm} from "./rm.js";
 import {errMsg} from "../../readline/readline.js";
+import {whereCurrently} from "../../whereCurrently/whereCurrently.js";
+import {paths} from "../../index.js";
 
-export const mv = (input) => {
-    const arrFiles = input.replace("mv ","").trim().split(' ');
-    if ( arrFiles.length === 2 ) {
-        const source = arrFiles[0];
-        cp(input.replace("mv ","").trim(),"move")
-        rm(source)
-    } else {
+export const mv = async (input) => {
+    try {
+        const arrFiles = input.replace("mv ","").trim().split(' ');
+        if ( arrFiles.length === 2 ) {
+            await cp(input.replace("mv ","").trim(),"move")
+        } else {
+            console.log(errMsg)
+            whereCurrently(paths.pathNow);
+        }
+    } catch (e){
         console.log(errMsg)
+        whereCurrently(paths.pathNow);
     }
 }
