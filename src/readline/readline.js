@@ -52,7 +52,7 @@ export const ReadLine = () => {
             whereCurrently(paths.pathNow);
         }
     }).on('SIGINT',()=>{
-        console.log(`Thank you for using File Manager, Username, goodbye!`)
+        console.log(`Thank you for using File Manager, ${userName}, goodbye!`)
     });
 }
 

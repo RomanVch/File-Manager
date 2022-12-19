@@ -22,16 +22,16 @@ export const cd = async (input)=>{
             const newPath = path.join(paths.pathNow, inputPath)
             const checkPath = await pathExist(newPath)
             if (checkPath) {
-                if(paths.pathNow !== paths.root){
-                    paths.pathNow = path.join(paths.pathNow, inputPath)
+                const newPaths = path.join(paths.pathNow, inputPath)
+                    paths.pathNow = newPaths
                     whereCurrently(newPath);
-                }
             } else {
-                console.error(errMsg)
+                console.error(errMsg);
                 whereCurrently(paths.pathNow);
             }
         }
-    } catch {
-        console.error(errMsg)
+    } catch (e) {
+        console.error(errMsg);
+        whereCurrently(paths.pathNow);
     }
 }
